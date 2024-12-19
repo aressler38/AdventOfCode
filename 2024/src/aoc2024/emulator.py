@@ -17,6 +17,11 @@ class Emulator:
                 if not self.jumped:
                     self.eip += 2
                 self.jumped = False
+        except ValueError as e:
+            if str(e.args[0]).startswith("not enough values to unpack"):
+                pass
+            else:
+                print(e)
         except Exception as error:
             print(error)
 
