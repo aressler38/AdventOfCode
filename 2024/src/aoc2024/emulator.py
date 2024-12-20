@@ -96,5 +96,11 @@ class Emulator:
             self.program.extend([int(n) for n in parts[1].split(':')[1].strip().split(',')])
         return self
 
-
+    def reset(self):
+        self.rax = 0
+        self.rbx = 0
+        self.rcx = 0
+        self.eip = 0
+        self.jumped = False
+        self.output = []
 
